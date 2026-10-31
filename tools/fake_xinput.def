@@ -1,0 +1,5 @@
+LIBRARY xinput1_4
+EXPORTS
+  XInputGetState @1
+  XInputGetStateEx @100
+  FakePadSet

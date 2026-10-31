@@ -1,0 +1,8 @@
+build/
+dist/
+out/
+*.log
+CombatMod_telemetry/
+*.obj
+*.exp
+*.lib

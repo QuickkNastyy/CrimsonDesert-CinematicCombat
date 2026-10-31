@@ -1,0 +1,40 @@
+Cinematic Combat (CombatMod) - changelog
+========================================
+
+0.9.0-beta  (first public release)
+  * Slow-motion amplifier for the game's own slow-motion moments, with strength,
+    ramp-in and ramp-out sliders and a chain safety limit.
+  * Launch (knock-back) boost with strength, minimum launch and angle settings;
+    explosive arrows and bombs are never boosted.
+  * Hit-stop control (experimental).
+  * Blinding Flash modes: the game's own, fast chain + slow finale, smooth slow
+    motion per hit + slow finale.
+  * Slow motion for towers / explosive arrows, and for explosions you cause.
+  * Custom slow-motion triggers (ini rules).
+  * In-game control panel (Ctrl+Enter or LB + DPad-Down): pauses the game,
+    presets (Vanilla, Cinematic, Heavy hits, Extreme), Save & Close, side help
+    window, keyboard / mouse / controller control.
+  * Finds the game's functions by byte signatures (CombatMod.sigs) and checks the
+    game's data layout; it stays inert, instead of risking a crash, on a game
+    build it does not recognise.
+  * Supported game builds (Steam build ID): 26308950, 26317560, 26329202.
+  * Hit reactions: the finale of a Blinding Flash chain can be a knock-down,
+    ground throw or ragdoll fling (default: ground throw), and Turning Slash
+    hits can be given the same choice (default: the game's own). Applied to
+    your own hits only, one call at a time, never stored.
+  * Blinding Flash chain speed is capped at 1.0 (higher speeds would speed up
+    everyone); an [Advanced] switch lifts the cap for experiments.
+  * "Longest chain" is now called "Slow-motion cap per chain" and says what it
+    does: it only shortens slow motion.
+  * Safety: before the panel pauses the game or a custom trigger changes the
+    clock, the mod checks that the game's clock objects look right and refuses
+    to write otherwise (it logs why). A missing or unreadable CombatMod.ini
+    never turns on any developer feature.
+  * The first lines of CombatMod.log name the mod version and the game build.
+    If a needed function is not found at start-up, the search is repeated
+    once after about 10 seconds.
+  * The Cinematic, Heavy hits and Extreme presets keep your Minimum launch.
+  * Release defaults: slow motion x0.5 with 1.6x ramps, launch x2 with minimum
+    launch 25, tower slow motion on, Blinding Flash and hit-stop untouched,
+    Blinding Flash finale as a ground throw, developer options (local network
+    port, telemetry) off.
