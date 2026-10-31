@@ -2219,6 +2219,8 @@ void TestBlindingFlash(Report& r) {
         need(a.bfKind == 0 && orig(Dh, 0.3f, 0.333f, 0.167f) && ch.size() == 1 && ch[0].end == "timeout" && ch[0].noFinale && !ch[0].finaleSeen && ae.Stats().bfNoFinale == 1, "1.5 s (here 150 ms) without a chain event ends the chain; no finale key = finale-less (bf_nofinale)");
         need(ae.BfLogText(5).find("NO (bf_nofinale)") != std::string::npos, "`bf log` marks the finale-less chain");
         // a new cast in the middle of a chain starts a new chain
+        // (a long gap here: this check is about the new-cast rule, not the timeout, so a slow or loaded machine must not turn it into a timeout)
+        { AmpParams pg = ae.Params(); pg.bfGapMs = 5000; ae.SetParams(pg); }
         call(se, kP, 10276, 1, 0, 0);
         setf(Dc1, 0.3f, 0.333f, 0.5f);
         fire(ae, Dc1);

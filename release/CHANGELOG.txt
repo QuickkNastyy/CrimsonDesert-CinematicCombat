@@ -2,6 +2,7 @@ Cinematic Combat (CombatMod) - changelog
 ========================================
 
 0.9.0-beta  (first public release)
+  * Open source under the MIT license: https://github.com/QuickkNastyy/CrimsonDesert-CinematicCombat
   * Slow-motion amplifier for the game's own slow-motion moments, with strength,
     ramp-in and ramp-out sliders and a chain safety limit.
   * Launch (knock-back) boost with strength, minimum launch and angle settings;
